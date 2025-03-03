@@ -66,6 +66,6 @@ def excel_to_json(input_dir, excel_file, language):
         # 写入JSON文件
         output_file = os.path.join(input_dir, f"{lang}.json")
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(json_data, f, ensure_ascii=False, indent=2)
+            json.dump(json_data, f, ensure_ascii=False, indent=2, sort_keys=True)
             
         print(f"已生成 {lang} 语言的JSON文件: {output_file}") 
