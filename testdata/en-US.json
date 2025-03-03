@@ -1,0 +1,11 @@
+{
+    "module1": {
+        "Hello": "Hello"
+    },
+    "module2": {
+        "Hello": "Hello",
+        "subModule": {
+            "subHello": "Submodule Hello"
+        }
+    }
+}
