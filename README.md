@@ -17,7 +17,38 @@ pip install pandas openpyxl
 
 ## 使用说明
 
-### JSON到Excel转换
+### 使用统一命令行界面 (推荐)
+
+该工具提供了统一的命令行界面，可以通过 `main.py` 访问所有功能：
+
+```bash
+# 查看帮助信息
+python main.py --help
+
+# JSON到Excel转换
+python main.py json2excel <i18n文件目录> [--output <输出的Excel文件>]
+
+# Excel到JSON转换
+python main.py excel2json <输出目录> <Excel文件路径> <语言代码>
+```
+
+示例：
+```bash
+# JSON到Excel转换
+python main.py json2excel ./testdata --output translations.xlsx
+
+# Excel到JSON转换（单语言）
+python main.py excel2json ./output translations.xlsx zh-CN
+
+# Excel到JSON转换（多语言）
+python main.py excel2json ./output translations.xlsx "zh-CN,en-US,zh-TW"
+```
+
+### 使用单独的脚本
+
+也可以直接使用单独的脚本：
+
+#### JSON到Excel转换
 
 将包含多种语言JSON文件的目录转换为单个Excel文件。
 
@@ -34,7 +65,7 @@ python json-to-excel.py <i18n文件目录> [--output <输出的Excel文件>]
 python json-to-excel.py ./testdata --output translations.xlsx
 ```
 
-### Excel到JSON转换
+#### Excel到JSON转换
 
 将Excel文件转换回一个或多个语言的JSON文件。
 
