@@ -1,2 +1,42 @@
-output/
+# Python构建目录和临时文件
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Excel临时文件
+~$*.xlsx
+~$*.xls
+
+# IDE相关
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 环境文件
+.env
+.venv
+env/
+venv/
+ENV/

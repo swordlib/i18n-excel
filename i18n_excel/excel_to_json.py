@@ -3,7 +3,6 @@
 
 import os
 import json
-import argparse
 import pandas as pd
 from collections import defaultdict
 
@@ -47,11 +46,11 @@ def excel_to_json(input_dir, excel_file, language):
             # 跳过空值
             if pd.isna(value):
                 continue
-            
+                
             # 确保模块存在
             if module not in json_data:
                 json_data[module] = {}
-            
+                
             # 嵌套字典以存储翻译
             current = json_data[module]
             
@@ -60,22 +59,13 @@ def excel_to_json(input_dir, excel_file, language):
                 if key not in current:
                     current[key] = {}
                 current = current[key]
-            
+                
             # 设置最后一个键的值
             current[key_path[-1]] = value
         
-        # 为当前语言生成JSON文件
+        # 写入JSON文件
         output_file = os.path.join(input_dir, f"{lang}.json")
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, ensure_ascii=False, indent=2)
-        
-        print(f"已生成 {lang} 语言的JSON文件: {output_file}")
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='将Excel转换为i18n JSON文件')
-    parser.add_argument('input_dir', help='输出的i18n文件目录')
-    parser.add_argument('excel_file', help='输入的Excel文件路径')
-    parser.add_argument('language', help='要生成的语言代码，多个语言用逗号分隔')
-    
-    args = parser.parse_args()
-    excel_to_json(args.input_dir, args.excel_file, args.language)
+            
+        print(f"已生成 {lang} 语言的JSON文件: {output_file}") 

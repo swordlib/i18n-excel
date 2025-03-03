@@ -3,7 +3,6 @@
 
 import os
 import json
-import argparse
 import pandas as pd
 from collections import defaultdict
 
@@ -88,12 +87,4 @@ def json_to_excel(input_dir, output_file="i18n_translations.xlsx"):
     
     # 保存到Excel
     df.to_excel(output_file, index=False)
-    print(f"已将i18n数据保存到: {output_file}")
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='将i18n JSON文件转换为Excel')
-    parser.add_argument('input_dir', help='包含i18n JSON文件的目录')
-    parser.add_argument('--output', '-o', default='i18n_translations.xlsx', help='输出的Excel文件名')
-    
-    args = parser.parse_args()
-    json_to_excel(args.input_dir, args.output)
+    print(f"已将i18n数据保存到: {output_file}") 

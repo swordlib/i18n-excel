@@ -4,8 +4,8 @@
 import os
 import sys
 import argparse
-from json_to_excel import json_to_excel
-from excel_to_json import excel_to_json
+from i18n_excel.json_to_excel import json_to_excel
+from i18n_excel.excel_to_json import excel_to_json
 
 def main():
     """i18n Excel 转换工具的主入口点"""
@@ -17,13 +17,13 @@ def main():
         epilog='''
 示例:
   # JSON到Excel转换
-  python main.py json2excel ./testdata --output translations.xlsx
+  i18n-excel json2excel ./testdata --output translations.xlsx
   
   # Excel到JSON转换（单语言）
-  python main.py excel2json ./output translations.xlsx zh-CN
+  i18n-excel excel2json ./output translations.xlsx zh-CN
   
   # Excel到JSON转换（多语言）
-  python main.py excel2json ./output translations.xlsx "zh-CN,en-US,zh-TW"
+  i18n-excel excel2json ./output translations.xlsx "zh-CN,en-US,zh-TW"
         '''
     )
     
