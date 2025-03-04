@@ -23,7 +23,7 @@ def excel_to_json(input_dir, excel_file, language):
     os.makedirs(input_dir, exist_ok=True)
     
     # 读取Excel文件
-    df = pd.read_excel(excel_file)
+    df = pd.read_excel(excel_file, keep_default_na=False)
     
     # 处理多个语言（用逗号分隔）
     languages = [lang.strip() for lang in language.split(',')]
