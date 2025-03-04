@@ -97,3 +97,7 @@ i18n-excel excel2json ./output translations.xlsx "zh-CN,en-US,zh-TW"
 ## 示例数据
 
 项目中的`testdata`目录包含了示例JSON文件，可以用来测试这些转换工具。 
+
+## 已知问题
+
+- key不要包含点号(.)，转换回去时会被识别为子模块, 变成嵌套的json对象, 如loading...。
